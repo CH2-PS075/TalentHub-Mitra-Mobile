@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
     private fun checkUserLogin() {
         viewModel.getSession().observe(this) { user ->
             if (user.isLogin) {
-                Toast.makeText(this, "Welcome to TalentHub!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Selamat datang di TalentHub Mitra!", Toast.LENGTH_SHORT).show()
             }
         }
     }
