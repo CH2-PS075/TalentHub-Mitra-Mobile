@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">TalentHub</string>
+    <string name="icon_bag">Icon of the TalentHub</string>
+
+    <string name="action_home">Home</string>
+    <string name="action_profile">Profile</string>
+
+    <!--Welcome Page-->
+    <string name="welomce_subtitle_text">Aplikasi yang membantu kamu untuk mempromosikan keahlianmu.</string>
+    <string name="welcome_register_text">Daftar Jadi Mitra TalentHub</string>
+    <string name="welcome_conditions_text">Anda menyetujui Persyaratan Layanan atau Kebijakan Privasi dengan masuk atau mendaftar.</string>
+
+    <!--Login & Register Page-->
+    <string name="login_text">Masuk</string>
+    <string name="continue_text">Selanjutnya</string>
+    <string name="logout_text">Keluar</string>
+    <string name="register_text">Daftar</string>
+    <string name="welcome_title_text">Selamat datang di TalentHub Mitra!</string>
+    <string name="register_title_text">Ayo Jadi Mitra di TalentHub!</string>
+    <string name="register_subtitle_text">Mohon perhatikan persyaratan ini terlebih dahulu</string>
+    <string name="register_desc_text">Sobat TALENTNITY bisa mendaftar menjadi mitra dengan memenuhi persyaratan berikut:</string>
+    <string name="point_1_text">1. Mengisi data diri talent dengan benar</string>
+    <string name="point_2_text">2. Dilarang mengisikan data-data palsu</string>
+    <string name="point_3_text">3. Menggungah foto asli</string>
+    <string name="login_subtitle_text">Masuk atau daftar hanya dalam beberapa langkah mudah</string>
+    <string name="email_hint">Email</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="login_conditions_text">Saya menyetujui Ketentuan Layanan &amp; Kebijakan Privasi TalentHub.</string>
+    <string name="signup_text">Belum terdaftar menjadi Mitra? Daftar</string>
+    <string name="signin_text">Sudah terdaftar menjadi Mitra? Masuk</string>
+
+    <!--Home Page-->
+    <string name="account_name">Hi, %1$s</string>
+
+    <!--Error and success handling-->
+    <string name="error_empty_field">Can not be empty</string>
+    <string name="error_short_password">Password must not be less than 8 characters</string>
+    <string name="success_title">Success</string>
+    <string name="failed_title">Failed</string>
+    <string name="continue_title">Continue</string>
+    <string name="back_title">Back</string>
+    <string name="try_again_title">Try again</string>
+    <string name="failed_login_message">Sorry, incorrect email or password</string>
+    <string name="failed_register_message">Sorry, registration failed. Email is already taken</string>
+    <string name="success_login_message">Welcome back! Login successful</string>
+
+    <!--Profile page-->
+    <string name="coming_soon">Segera hadir halaman ini yaa :(</string>
+</resources>
