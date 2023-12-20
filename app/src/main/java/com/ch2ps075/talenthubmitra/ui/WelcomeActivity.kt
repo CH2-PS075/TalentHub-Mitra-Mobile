@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.ch2ps075.talenthubmitra.databinding.ActivityWelcomeBinding
 import com.ch2ps075.talenthubmitra.ui.login.LoginActivity
 import com.ch2ps075.talenthubmitra.ui.register.PreRegisterActivity
+import com.ch2ps075.talenthubmitra.ui.register.VerifyPhotoActivity
 
 class WelcomeActivity : AppCompatActivity() {
 
@@ -20,7 +21,7 @@ class WelcomeActivity : AppCompatActivity() {
             startActivity(Intent(this, LoginActivity::class.java))
         }
         binding.startRegisterButton.setOnClickListener {
-            startActivity(Intent(this, PreRegisterActivity::class.java))
+            startActivity(Intent(this, VerifyPhotoActivity::class.java))
         }
     }
 }

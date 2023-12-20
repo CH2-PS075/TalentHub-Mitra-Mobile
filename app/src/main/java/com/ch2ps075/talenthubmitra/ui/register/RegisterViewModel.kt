@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.ch2ps075.talenthubmitra.data.repo.AuthRepository
 import com.ch2ps075.talenthubmitra.state.ResultState
+import java.io.File
 
 class RegisterViewModel(private val authRepository: AuthRepository) : ViewModel() {
     fun register(
@@ -13,4 +14,6 @@ class RegisterViewModel(private val authRepository: AuthRepository) : ViewModel(
     ): LiveData<ResultState<Any>> {
         return authRepository.register(username, email, password)
     }
+
+    fun prediction(file: File) = authRepository.prediction(file)
 }

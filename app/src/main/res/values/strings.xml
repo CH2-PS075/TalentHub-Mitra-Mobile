@@ -47,4 +47,7 @@
 
     <!--Profile page-->
     <string name="coming_soon">Segera hadir halaman ini yaa :(</string>
+    <string name="photo_picker">Photo picker: Tidak ada gambar yang dipilih</string>
+    <string name="photo_picker_not_available">Photo picker tidak tersedia di perangkat ini</string>
+    <string name="open_document">Open document: Tidak ada gambar yang dipilih</string>
 </resources>

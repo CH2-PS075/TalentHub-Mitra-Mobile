@@ -3,13 +3,18 @@ package com.ch2ps075.talenthubmitra.data.repo
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.ch2ps075.talenthubmitra.data.network.api.response.AuthResponse
+import com.ch2ps075.talenthubmitra.data.network.api.retrofit.ApiConfigML
 import com.ch2ps075.talenthubmitra.data.network.api.retrofit.ApiService
 import com.ch2ps075.talenthubmitra.data.preference.TalentModel
 import com.ch2ps075.talenthubmitra.data.preference.TalentPreferences
 import com.ch2ps075.talenthubmitra.state.ResultState
 import com.google.gson.Gson
 import kotlinx.coroutines.flow.Flow
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
 import retrofit2.HttpException
+import java.io.File
 
 class AuthRepository private constructor(
     private val apiService: ApiService,
@@ -61,6 +66,22 @@ class AuthRepository private constructor(
         }
     }
 
+    fun prediction(imageFile: File) = liveData {
+        emit(ResultState.Loading)
+        val requestImageFile = imageFile.asRequestBody("image/jpeg".toMediaType())
+        val multipartBody = MultipartBody.Part.createFormData(
+            "image",
+            imageFile.name,
+            requestImageFile
+        )
+        try {
+            val apiService = ApiConfigML.getApiService()
+            val request = apiService.prediction(multipartBody)
+            emit(ResultState.Success(request))
+        } catch (e: HttpException) {
+            e.printStackTrace()
+        }
+    }
 
     companion object {
         @Volatile
