@@ -4,98 +4,114 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.auth.register.PreRegisterActivity">
+    tools:context=".ui.auth.register.ThirdRegisterActivity">
 
     <ImageView
         android:id="@+id/icon_bag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:contentDescription="@string/icon_bag"
-        app:layout_constraintBottom_toTopOf="@+id/tv_register_title_text"
+        app:layout_constraintBottom_toTopOf="@+id/tv_register3_title_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_bag" />
 
     <TextView
-        android:id="@+id/tv_register_title_text"
+        android:id="@+id/tv_register3_title_text"
         style="@style/TextView.ExtraLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/register_title_text"
+        android:text="@string/register3_title_text"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@id/tv_register_subtitle_text"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_register3_subtitle_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/icon_bag" />
 
     <TextView
-        android:id="@+id/tv_register_subtitle_text"
+        android:id="@+id/tv_register3_subtitle_text"
         style="@style/TextView.Small"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/register_subtitle_text"
+        android:text="@string/register3_subtitle_text"
         android:textAlignment="center"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_register_title_text" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_register3_title_text" />
+
+    <ImageView
+        android:id="@+id/preview_image_view"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_placeholder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_register3_subtitle_text" />
 
     <TextView
-        android:id="@+id/tv_register_desc"
         style="@style/TextView.Small"
-        android:layout_width="match_parent"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:fontFamily="@font/montserrat"
-        android:paddingHorizontal="20dp"
-        android:text="@string/register_desc_text"
-        android:textAlignment="textStart"
-        android:textColor="@color/colorDark"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/instruction_photo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_register_subtitle_text" />
-
-    <TextView
-        android:id="@+id/tv_point_1"
-        style="@style/TextView.Small"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:paddingHorizontal="20dp"
-        android:text="@string/point_1_text"
-        android:textAlignment="textStart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_register_desc" />
-
-    <TextView
-        android:id="@+id/tv_point_2"
-        style="@style/TextView.Small"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="20dp"
-        android:text="@string/point_2_text"
-        android:textAlignment="textStart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_point_1" />
-
-    <TextView
-        android:id="@+id/tv_point_3"
-        style="@style/TextView.Small"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="20dp"
-        android:text="@string/point_3_text"
-        android:textAlignment="textStart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_point_2" />
+        app:layout_constraintStart_toEndOf="@id/preview_image_view"
+        app:layout_constraintTop_toBottomOf="@id/tv_register3_subtitle_text" />
 
     <Button
-        android:id="@+id/continue_button"
+        android:id="@+id/select_image_button"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="@string/open_gallery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/preview_image_view"
+        app:layout_constraintTop_toBottomOf="@id/tv_register3_subtitle_text" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/portfolioEditTextLayout"
+        style="?attr/textInputOutlinedStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/preview_image_view">
+
+        <EditText
+            android:id="@+id/ed_register_portfolio"
+            style="@style/EditText.Portfolio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="Portfolio"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/cb_location"
+        style="@style/TextView.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:text="@string/access_location"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/portfolioEditTextLayout" />
+
+    <Button
+        android:id="@+id/final_register_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="18dp"
@@ -103,10 +119,10 @@
         android:backgroundTint="@color/colorPrimary"
         android:fontFamily="@font/montserrat_medium"
         android:paddingVertical="15dp"
-        android:text="@string/continue_text"
+        android:text="@string/finish_register_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_point_3" />
+        app:layout_constraintTop_toBottomOf="@id/cb_location" />
 
     <TextView
         android:id="@+id/tv_conditions"
@@ -119,26 +135,14 @@
         android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/continue_button" />
-
-    <TextView
-        android:id="@+id/tv_signin"
-        style="@style/TextView.ExtraSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="@string/signin_text"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/final_register_button" />
 
     <ProgressBar
         android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:indeterminate="true"
-        android:indeterminateTint="@color/colorPrimary"
+        android:indeterminateTint="@color/colorSecondary"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

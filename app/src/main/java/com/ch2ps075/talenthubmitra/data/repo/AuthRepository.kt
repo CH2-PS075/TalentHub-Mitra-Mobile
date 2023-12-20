@@ -3,7 +3,6 @@ package com.ch2ps075.talenthubmitra.data.repo
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.ch2ps075.talenthubmitra.data.network.api.response.AuthResponse
-import com.ch2ps075.talenthubmitra.data.network.api.retrofit.ApiConfigML
 import com.ch2ps075.talenthubmitra.data.network.api.retrofit.ApiService
 import com.ch2ps075.talenthubmitra.data.preference.TalentModel
 import com.ch2ps075.talenthubmitra.data.preference.TalentPreferences
@@ -13,6 +12,7 @@ import kotlinx.coroutines.flow.Flow
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import retrofit2.HttpException
 import java.io.File
 
@@ -34,14 +34,48 @@ class AuthRepository private constructor(
     }
 
     fun register(
-        username: String,
+        talentName: String,
+        category: String,
+        quantity: String,
+        address: String,
+        contact: String,
+        price: String,
         email: String,
         password: String,
+        portfolio: String,
+        imageFile: File
     ): LiveData<ResultState<Any>> {
         return liveData {
             emit(ResultState.Loading)
+            val talentNameRequestBody = talentName.toRequestBody("text/plain".toMediaType())
+            val categoryRequestBody = category.toRequestBody("text/plain".toMediaType())
+            val quantityRequestBody = quantity.toRequestBody("text/plain".toMediaType())
+            val addressRequestBody = address.toRequestBody("text/plain".toMediaType())
+            val contactRequestBody = contact.toRequestBody("text/plain".toMediaType())
+            val priceRequestBody = price.toRequestBody("text/plain".toMediaType())
+            val emailRequestBody = email.toRequestBody("text/plain".toMediaType())
+            val passwordRequestBody = password.toRequestBody("text/plain".toMediaType())
+            val portfolioRequestBody = portfolio.toRequestBody("text/plain".toMediaType())
+
+            val requestImageFile = imageFile.asRequestBody("image/jpeg".toMediaType())
+            val multipartBody = MultipartBody.Part.createFormData(
+                "picture",
+                imageFile.name,
+                requestImageFile
+            )
             try {
-                val successResponse = apiService.register(username, email, password).message
+                val successResponse = apiService.register(
+                    talentNameRequestBody,
+                    categoryRequestBody,
+                    quantityRequestBody,
+                    addressRequestBody,
+                    contactRequestBody,
+                    priceRequestBody,
+                    emailRequestBody,
+                    passwordRequestBody,
+                    portfolioRequestBody,
+                    multipartBody
+                )
                 emit(ResultState.Success(successResponse))
             } catch (e: HttpException) {
                 val jsonInString = e.response()?.errorBody()?.string()
@@ -63,23 +97,6 @@ class AuthRepository private constructor(
             val jsonInString = e.response()?.errorBody()?.string()
             val errorBody = Gson().fromJson(jsonInString, AuthResponse::class.java)
             errorBody.message.let { ResultState.Error(it) }.let { emit(it) }
-        }
-    }
-
-    fun prediction(imageFile: File) = liveData {
-        emit(ResultState.Loading)
-        val requestImageFile = imageFile.asRequestBody("image/jpeg".toMediaType())
-        val multipartBody = MultipartBody.Part.createFormData(
-            "image",
-            imageFile.name,
-            requestImageFile
-        )
-        try {
-            val apiService = ApiConfigML.getApiService()
-            val request = apiService.prediction(multipartBody)
-            emit(ResultState.Success(request))
-        } catch (e: HttpException) {
-            e.printStackTrace()
         }
     }
 

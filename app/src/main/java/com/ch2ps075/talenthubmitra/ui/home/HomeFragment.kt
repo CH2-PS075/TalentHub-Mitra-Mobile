@@ -11,7 +11,7 @@ import com.ch2ps075.talenthubmitra.R
 import com.ch2ps075.talenthubmitra.databinding.FragmentHomeBinding
 import com.ch2ps075.talenthubmitra.ui.ViewModelFactory
 import com.ch2ps075.talenthubmitra.ui.WelcomeActivity
-import com.ch2ps075.talenthubmitra.ui.login.LoginActivity
+import com.ch2ps075.talenthubmitra.ui.auth.login.LoginActivity
 import com.ch2ps075.talenthubmitra.ui.main.MainViewModel
 
 class HomeFragment : Fragment() {
@@ -40,7 +40,7 @@ class HomeFragment : Fragment() {
                 startActivity(Intent(requireActivity(), targetClass))
             }
 
-            val name = if (user.isLogin) user.username else "TALENTNITY!"
+            val name = if (user.isLogin) user.email else "MITRA TALENTHUB!"
             val loginTextRes = if (user.isLogin) R.string.logout_text else R.string.login_text
 
             binding.tvName.text = resources.getString(R.string.account_name, name)

@@ -4,65 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.login.LoginActivity">
+    tools:context=".ui.auth.register.SecondRegisterActivity">
 
     <ImageView
         android:id="@+id/icon_bag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="100dp"
         android:contentDescription="@string/icon_bag"
-        app:layout_constraintBottom_toTopOf="@+id/tv_login_title_text"
+        app:layout_constraintBottom_toTopOf="@+id/tv_register2_title_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_bag" />
 
     <TextView
-        android:id="@+id/tv_login_title_text"
+        android:id="@+id/tv_register2_title_text"
         style="@style/TextView.ExtraLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/welcome_title_text"
+        android:text="@string/register2_title_text"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@id/tv_login_subtitle_text"
+        app:layout_constraintBottom_toTopOf="@id/tv_register2_subtitle_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/icon_bag" />
 
     <TextView
-        android:id="@+id/tv_login_subtitle_text"
+        android:id="@+id/tv_register2_subtitle_text"
         style="@style/TextView.Small"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/login_subtitle_text"
+        android:text="@string/register2_subtitle_text"
         android:textAlignment="center"
-        android:textSize="12sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_login_title_text" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/usernameEditTextLayout"
-        style="?attr/textInputOutlinedStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="18dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_login_subtitle_text">
-
-        <EditText
-            android:id="@+id/ed_register_username"
-            style="@style/EditText.Username"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="Username"
-            android:hint="@string/username_hint" />
-
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/tv_register2_title_text" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailEditTextLayout"
@@ -72,9 +52,9 @@
         android:layout_marginHorizontal="18dp"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/usernameEditTextLayout">
+        app:layout_constraintTop_toBottomOf="@id/tv_register2_subtitle_text">
 
-        <EditText
+        <com.ch2ps075.talenthubmitra.ui.auth.customview.EmailEditText
             android:id="@+id/ed_register_email"
             style="@style/EditText.Email"
             android:layout_width="match_parent"
@@ -95,7 +75,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/emailEditTextLayout">
 
-        <EditText
+        <com.ch2ps075.talenthubmitra.ui.auth.customview.PasswordEditText
             android:id="@+id/ed_register_password"
             style="@style/EditText.Password"
             android:layout_width="match_parent"
@@ -105,7 +85,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/register_button"
+        android:id="@+id/next_register2_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="18dp"
@@ -113,35 +93,9 @@
         android:backgroundTint="@color/colorPrimary"
         android:fontFamily="@font/montserrat_medium"
         android:paddingVertical="15dp"
-        android:text="@string/register_text"
+        android:text="@string/continue_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/passwordEditTextLayout" />
-
-    <TextView
-        android:id="@+id/tv_conditions"
-        style="@style/TextView.ExtraSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="22dp"
-        android:layout_marginTop="12dp"
-        android:text="@string/login_conditions_text"
-        android:textAlignment="textStart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_button" />
-
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:indeterminate="true"
-        android:indeterminateTint="@color/colorPrimary"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible"></ProgressBar>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
