@@ -88,6 +88,13 @@
         <item name="android:hint">@string/portfolio_hint</item>
         <item name="android:drawableTint">@color/colorDark</item>
     </style>
+
+    <style name="EditText.Description">
+        <item name="android:background">@drawable/shape_rectangle_rounded_10</item>
+        <item name="android:drawableStart">@drawable/outline_description_24</item>
+        <item name="android:hint">@string/description_hint</item>
+        <item name="android:drawableTint">@color/colorDark</item>
+    </style>
     <!--End of Style for EditText-->
 
     <!--Style for TextView-->

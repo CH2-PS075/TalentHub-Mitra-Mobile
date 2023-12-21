@@ -17,6 +17,9 @@ class RegisterViewModel(private val authRepository: AuthRepository) : ViewModel(
         email: String,
         password: String,
         portfolio: String,
+        description: String,
+        latitude: Double? = null,
+        longitude: Double? = null,
         imageFile: File,
     ): LiveData<ResultState<Any>> {
         return authRepository.register(
@@ -29,6 +32,9 @@ class RegisterViewModel(private val authRepository: AuthRepository) : ViewModel(
             email,
             password,
             portfolio,
+            description,
+            latitude,
+            longitude,
             imageFile
         )
     }

@@ -10,7 +10,7 @@
         android:id="@+id/icon_bag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:contentDescription="@string/icon_bag"
         app:layout_constraintBottom_toTopOf="@+id/tv_register3_title_text"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +81,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_register3_subtitle_text" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/portfolioEditTextLayout"
+        android:id="@+id/descEditTextLayout"
         style="?attr/textInputOutlinedStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -89,6 +89,26 @@
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/preview_image_view">
+
+        <EditText
+            android:id="@+id/ed_register_description"
+            style="@style/EditText.Description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="Portfolio"
+            android:inputType="textMultiLine"
+            android:lines="4" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/portofolioEditTextLayout"
+        style="?attr/textInputOutlinedStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/descEditTextLayout">
 
         <EditText
             android:id="@+id/ed_register_portfolio"
@@ -108,14 +128,14 @@
         android:text="@string/access_location"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/portfolioEditTextLayout" />
+        app:layout_constraintTop_toBottomOf="@id/portofolioEditTextLayout" />
 
     <Button
         android:id="@+id/final_register_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="18dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/colorPrimary"
         android:fontFamily="@font/montserrat_medium"
         android:paddingVertical="15dp"

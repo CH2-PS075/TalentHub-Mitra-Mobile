@@ -1,7 +1,6 @@
 package com.ch2ps075.talenthubmitra.data.network.api.retrofit
 
 import com.ch2ps075.talenthubmitra.data.network.api.response.AuthResponse
-import com.ch2ps075.talenthubmitra.data.network.api.response.PredictionResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.http.*
@@ -18,7 +17,10 @@ interface ApiService {
         @Part("price") price: RequestBody,
         @Part("email") email: RequestBody,
         @Part("password") password: RequestBody,
+        @Part("description") description: RequestBody,
         @Part("portfolio") portfolio: RequestBody,
+        @Part("latitude") latitude: Double? = null,
+        @Part("longitude") longitude: Double? = null,
         @Part file: MultipartBody.Part,
     ): AuthResponse
 
@@ -28,10 +30,4 @@ interface ApiService {
         @Field("email") email: String,
         @Field("password") password: String,
     ): AuthResponse
-
-    @Multipart
-    @POST("prediction")
-    suspend fun prediction(
-        @Part file: MultipartBody.Part
-    ): PredictionResponse
 }

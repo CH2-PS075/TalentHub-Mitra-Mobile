@@ -43,6 +43,9 @@ class AuthRepository private constructor(
         email: String,
         password: String,
         portfolio: String,
+        description: String,
+        latitude: Double? = null,
+        longitude: Double? = null,
         imageFile: File
     ): LiveData<ResultState<Any>> {
         return liveData {
@@ -56,6 +59,7 @@ class AuthRepository private constructor(
             val emailRequestBody = email.toRequestBody("text/plain".toMediaType())
             val passwordRequestBody = password.toRequestBody("text/plain".toMediaType())
             val portfolioRequestBody = portfolio.toRequestBody("text/plain".toMediaType())
+            val descriptionRequestBody = description.toRequestBody("text/plain".toMediaType())
 
             val requestImageFile = imageFile.asRequestBody("image/jpeg".toMediaType())
             val multipartBody = MultipartBody.Part.createFormData(
@@ -74,6 +78,9 @@ class AuthRepository private constructor(
                     emailRequestBody,
                     passwordRequestBody,
                     portfolioRequestBody,
+                    descriptionRequestBody,
+                    latitude,
+                    longitude,
                     multipartBody
                 )
                 emit(ResultState.Success(successResponse))

@@ -45,6 +45,7 @@
     <string name="contact_hint">Kontak (No WA)</string>
     <string name="price_hint">Harga</string>
     <string name="portfolio_hint">Portofolio (link google drive)</string>
+    <string name="description_hint">Jelaskan pengalaman/kemampuan kamu</string>
     <string name="access_location">Aktifkan lokasi agar klien mudah menemukanmu</string>
     <string name="text_group_type">Tipe Grup</string>
     <string name="required_category_grouptype">Pilih kategori dan jenis grup</string>
@@ -90,4 +91,5 @@
     <string name="photo_picker">Photo picker: Tidak ada gambar yang dipilih</string>
     <string name="photo_picker_not_available">Photo picker tidak tersedia di perangkat ini</string>
     <string name="open_document">Open document: Tidak ada gambar yang dipilih</string>
+    <string name="location_not_found">Lokasi tidak ditemukan. Coba lagi</string>
 </resources>
