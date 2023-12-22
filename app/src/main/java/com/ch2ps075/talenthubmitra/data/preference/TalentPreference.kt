@@ -17,8 +17,10 @@ class TalentPreferences private constructor(private val dataStore: DataStore<Pre
     fun getSession(): Flow<TalentModel> {
         return dataStore.data.map { preferences ->
             TalentModel(
-                username = preferences[USERNAME_KEY] ?: "",
                 email = preferences[EMAIL_KEY] ?: "",
+                contact = preferences[CONTACT_KEY] ?: "",
+                address = preferences[ADDRESS_KEY] ?: "",
+                picture = preferences[PICTURE_KEY] ?: "",
                 token = preferences[TOKEN_KEY] ?: "",
                 isLogin = preferences[IS_LOGIN_KEY] ?: false
             )
@@ -27,8 +29,10 @@ class TalentPreferences private constructor(private val dataStore: DataStore<Pre
 
     suspend fun saveSession(user: TalentModel) {
         dataStore.edit { preferences ->
-            preferences[USERNAME_KEY] = user.username
             preferences[EMAIL_KEY] = user.email
+            preferences[CONTACT_KEY] = user.contact
+            preferences[ADDRESS_KEY] = user.address
+            preferences[PICTURE_KEY] = user.picture
             preferences[TOKEN_KEY] = user.token
             preferences[IS_LOGIN_KEY] = true
         }
@@ -41,8 +45,10 @@ class TalentPreferences private constructor(private val dataStore: DataStore<Pre
     }
 
     companion object {
-        private val USERNAME_KEY = stringPreferencesKey("username")
         private val EMAIL_KEY = stringPreferencesKey("email")
+        private val CONTACT_KEY = stringPreferencesKey("contact")
+        private val ADDRESS_KEY = stringPreferencesKey("address")
+        private val PICTURE_KEY = stringPreferencesKey("picture")
         private val TOKEN_KEY = stringPreferencesKey("token")
         private val IS_LOGIN_KEY = booleanPreferencesKey("isLogin")
 

@@ -5,9 +5,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.ch2ps075.talenthubmitra.data.repo.AuthRepository
 import com.ch2ps075.talenthubmitra.injection.Injection
-import com.ch2ps075.talenthubmitra.ui.login.LoginViewModel
+import com.ch2ps075.talenthubmitra.ui.auth.login.LoginViewModel
 import com.ch2ps075.talenthubmitra.ui.main.MainViewModel
-import com.ch2ps075.talenthubmitra.ui.register.RegisterViewModel
+import com.ch2ps075.talenthubmitra.ui.auth.register.RegisterViewModel
 import java.lang.IllegalArgumentException
 
 class ViewModelFactory private constructor(

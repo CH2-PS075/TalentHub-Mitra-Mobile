@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.auth.register.FirstRegisterActivity">
+
+    <ImageView
+        android:id="@+id/icon_bag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/icon_bag"
+        app:layout_constraintBottom_toTopOf="@+id/tv_register1_title_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_bag" />
+
+    <TextView
+        android:id="@+id/tv_register1_title_text"
+        style="@style/TextView.ExtraLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/register1_title_text"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_register1_subtitle_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/icon_bag" />
+
+    <TextView
+        android:id="@+id/tv_register1_subtitle_text"
+        style="@style/TextView.Small"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/register1_subtitle_text"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_register1_title_text" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/talentnameEditTextLayout"
+        style="?attr/textInputOutlinedStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_register1_subtitle_text">
+
+        <EditText
+            android:id="@+id/ed_register_talentname"
+            style="@style/EditText.Username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="Username"
+            android:drawableTint="@color/colorDark"
+            android:hint="@string/talentname_hint" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/categoryEditTextLayout"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/talentnameEditTextLayout">
+
+        <AutoCompleteTextView
+            android:id="@+id/auto_complete_category"
+            style="@style/EditText.Category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/text_category"
+            android:inputType="none" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/grouptypeEditTextLayout"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/categoryEditTextLayout">
+
+        <AutoCompleteTextView
+            android:id="@+id/auto_complete_grouptype"
+            style="@style/EditText.GroupType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/text_group_type"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/addressEditTextLayout"
+        style="?attr/textInputOutlinedStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grouptypeEditTextLayout">
+
+        <EditText
+            android:id="@+id/ed_register_address"
+            style="@style/EditText.Address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="Address"
+            android:drawableTint="@color/colorDark" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/contactEditTextLayout"
+        style="?attr/textInputOutlinedStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addressEditTextLayout">
+
+        <EditText
+            android:id="@+id/ed_register_contact"
+            style="@style/EditText.Contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="Contact"
+            android:drawableTint="@color/colorDark" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/priceEditTextLayout"
+        style="?attr/textInputOutlinedStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contactEditTextLayout">
+
+        <EditText
+            android:id="@+id/ed_register_price"
+            style="@style/EditText.Price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="Price"
+            android:drawableTint="@color/colorDark"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/next_register1_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:fontFamily="@font/montserrat_medium"
+        android:paddingVertical="15dp"
+        android:text="@string/continue_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/priceEditTextLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

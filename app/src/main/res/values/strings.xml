@@ -10,12 +10,22 @@
     <string name="welcome_register_text">Daftar Jadi Mitra TalentHub</string>
     <string name="welcome_conditions_text">Anda menyetujui Persyaratan Layanan atau Kebijakan Privasi dengan masuk atau mendaftar.</string>
 
+    <!--Home Page-->
+    <string name="account_name">Hi, %1$s</string>
+
     <!--Login & Register Page-->
     <string name="login_text">Masuk</string>
     <string name="continue_text">Selanjutnya</string>
     <string name="logout_text">Keluar</string>
     <string name="register_text">Daftar</string>
+    <string name="finish_register_text">Selesai &amp; Daftar</string>
     <string name="welcome_title_text">Selamat datang di TalentHub Mitra!</string>
+    <string name="register1_title_text">Lengkapi data-data ini dulu yuk!</string>
+    <string name="register2_title_text">Lanjut, daftar akun dulu ya!</string>
+    <string name="register3_title_text">Terakhir, selesaikan tahap akhir ini ya!</string>
+    <string name="register3_subtitle_text">Perhatikan ketentuan dan pastikan jangan salah mengisi!</string>
+    <string name="register1_subtitle_text">Isi data berikut agar data kamu bisa kami proses ya!</string>
+    <string name="register2_subtitle_text">Isi data email dan password dulu ya!</string>
     <string name="register_title_text">Ayo Jadi Mitra di TalentHub!</string>
     <string name="register_subtitle_text">Mohon perhatikan persyaratan ini terlebih dahulu</string>
     <string name="register_desc_text">Sobat TALENTNITY bisa mendaftar menjadi mitra dengan memenuhi persyaratan berikut:</string>
@@ -25,26 +35,61 @@
     <string name="login_subtitle_text">Masuk atau daftar hanya dalam beberapa langkah mudah</string>
     <string name="email_hint">Email</string>
     <string name="username_hint">Username</string>
+    <string name="talentname_hint">Nama Talent/Nama Tim/Nama Grup</string>
     <string name="password_hint">Password</string>
     <string name="login_conditions_text">Saya menyetujui Ketentuan Layanan &amp; Kebijakan Privasi TalentHub.</string>
     <string name="signup_text">Belum terdaftar menjadi Mitra? Daftar</string>
     <string name="signin_text">Sudah terdaftar menjadi Mitra? Masuk</string>
-
-    <!--Home Page-->
-    <string name="account_name">Hi, %1$s</string>
+    <string name="text_category">Kategori</string>
+    <string name="address_hint">Alamat Lengkap</string>
+    <string name="contact_hint">Kontak (No WA)</string>
+    <string name="price_hint">Harga</string>
+    <string name="portfolio_hint">Portofolio (link google drive)</string>
+    <string name="description_hint">Jelaskan pengalaman/kemampuan kamu</string>
+    <string name="access_location">Aktifkan lokasi agar klien mudah menemukanmu</string>
+    <string name="text_group_type">Tipe Grup</string>
+    <string name="required_category_grouptype">Pilih kategori dan jenis grup</string>
+    <string name="invalid_email">Email tidak valid</string>
+    <string name="success_register_talent">Selamat! kamu berhasil mendaftar menjadi talent di TalentHub</string>
+    <string name="open_gallery">Pilih Gambar</string>
+    <string name="instruction_photo">Pastikan gambar yang kamu pilih bukan gambar kartun, hewan, ataupun obyek yang lain.</string>
+    <string name="invalid_picture_error">Gambar tidak valid, tidak berhasil daftar</string>
 
     <!--Error and success handling-->
-    <string name="error_empty_field">Can not be empty</string>
-    <string name="error_short_password">Password must not be less than 8 characters</string>
-    <string name="success_title">Success</string>
-    <string name="failed_title">Failed</string>
-    <string name="continue_title">Continue</string>
-    <string name="back_title">Back</string>
-    <string name="try_again_title">Try again</string>
-    <string name="failed_login_message">Sorry, incorrect email or password</string>
-    <string name="failed_register_message">Sorry, registration failed. Email is already taken</string>
-    <string name="success_login_message">Welcome back! Login successful</string>
+    <string name="error_empty_field">Tidak boleh kosong</string>
+    <string name="error_short_password">Kata sandi tidak boleh kurang dari 8 karakter</string>
+    <string name="success_title">Sukses</string>
+    <string name="failed_title">Gagal</string>
+    <string name="continue_title">Lanjutkan</string>
+    <string name="back_title">Kembali</string>
+    <string name="try_again_title">Coba lagi</string>
+    <string name="failed_login_message">Maaf, email atau kata sandi salah</string>
+    <string name="failed_register_message">Maaf, pendaftaran gagal</string>
+    <string name="success_login_message">Selamat datang kembali! Login berhasil</string>
+
+    <!--Category and group type-->
+    <array name="category_titles">
+        <item>Klasik</item>
+        <item>Jazz"</item>
+        <item>Akustik"</item>
+        <item>Pop</item>
+        <item>Hip Hop</item>
+        <item>R&amp;B</item>
+        <item>Rock</item>
+        <item>Religi</item>
+        <item>Dangdut</item>
+    </array>
+
+    <array name="group_type_titles">
+        <item>single</item>
+        <item>duo</item>
+        <item>group</item>
+    </array>
 
     <!--Profile page-->
     <string name="coming_soon">Segera hadir halaman ini yaa :(</string>
+    <string name="photo_picker">Photo picker: Tidak ada gambar yang dipilih</string>
+    <string name="photo_picker_not_available">Photo picker tidak tersedia di perangkat ini</string>
+    <string name="open_document">Open document: Tidak ada gambar yang dipilih</string>
+    <string name="location_not_found">Lokasi tidak ditemukan. Coba lagi</string>
 </resources>

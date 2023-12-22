@@ -9,7 +9,12 @@ import com.ch2ps075.talenthubmitra.data.preference.TalentPreferences
 import com.ch2ps075.talenthubmitra.state.ResultState
 import com.google.gson.Gson
 import kotlinx.coroutines.flow.Flow
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import retrofit2.HttpException
+import java.io.File
 
 class AuthRepository private constructor(
     private val apiService: ApiService,
@@ -29,14 +34,55 @@ class AuthRepository private constructor(
     }
 
     fun register(
-        username: String,
+        talentName: String,
+        category: String,
+        quantity: String,
+        address: String,
+        contact: String,
+        price: String,
         email: String,
         password: String,
+        portfolio: String,
+        description: String,
+        latitude: Double? = null,
+        longitude: Double? = null,
+        imageFile: File
     ): LiveData<ResultState<Any>> {
         return liveData {
             emit(ResultState.Loading)
+            val talentNameRequestBody = talentName.toRequestBody("text/plain".toMediaType())
+            val categoryRequestBody = category.toRequestBody("text/plain".toMediaType())
+            val quantityRequestBody = quantity.toRequestBody("text/plain".toMediaType())
+            val addressRequestBody = address.toRequestBody("text/plain".toMediaType())
+            val contactRequestBody = contact.toRequestBody("text/plain".toMediaType())
+            val priceRequestBody = price.toRequestBody("text/plain".toMediaType())
+            val emailRequestBody = email.toRequestBody("text/plain".toMediaType())
+            val passwordRequestBody = password.toRequestBody("text/plain".toMediaType())
+            val portfolioRequestBody = portfolio.toRequestBody("text/plain".toMediaType())
+            val descriptionRequestBody = description.toRequestBody("text/plain".toMediaType())
+
+            val requestImageFile = imageFile.asRequestBody("image/jpeg".toMediaType())
+            val multipartBody = MultipartBody.Part.createFormData(
+                "picture",
+                imageFile.name,
+                requestImageFile
+            )
             try {
-                val successResponse = apiService.register(username, email, password).message
+                val successResponse = apiService.register(
+                    talentNameRequestBody,
+                    categoryRequestBody,
+                    quantityRequestBody,
+                    addressRequestBody,
+                    contactRequestBody,
+                    priceRequestBody,
+                    emailRequestBody,
+                    passwordRequestBody,
+                    portfolioRequestBody,
+                    descriptionRequestBody,
+                    latitude,
+                    longitude,
+                    multipartBody
+                )
                 emit(ResultState.Success(successResponse))
             } catch (e: HttpException) {
                 val jsonInString = e.response()?.errorBody()?.string()
@@ -60,7 +106,6 @@ class AuthRepository private constructor(
             errorBody.message.let { ResultState.Error(it) }.let { emit(it) }
         }
     }
-
 
     companion object {
         @Volatile

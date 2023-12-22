@@ -53,6 +53,48 @@
         <item name="android:hint">@string/username_hint</item>
         <item name="android:inputType">textPersonName</item>
     </style>
+
+    <style name="EditText.Category">
+        <item name="android:drawableStart">@drawable/outline_queue_music_24</item>
+        <item name="android:drawableTint">@color/colorDark</item>
+    </style>
+
+    <style name="EditText.GroupType">
+        <item name="android:drawableStart">@drawable/outline_group_24</item>
+        <item name="android:drawableTint">@color/colorDark</item>
+    </style>
+
+    <style name="EditText.Address">
+        <item name="android:drawableStart">@drawable/ic_home</item>
+        <item name="android:hint">@string/address_hint</item>
+        <item name="android:drawableTint">@color/colorDark</item>
+        <item name="android:inputType">textPostalAddress</item>
+    </style>
+
+    <style name="EditText.Contact">
+        <item name="android:drawableStart">@drawable/ic_contact</item>
+        <item name="android:hint">@string/contact_hint</item>
+        <item name="android:inputType">number</item>
+    </style>
+
+    <style name="EditText.Price">
+        <item name="android:drawableStart">@drawable/icon_price_idr</item>
+        <item name="android:hint">@string/price_hint</item>
+        <item name="android:drawableTint">@color/colorDark</item>
+    </style>
+
+    <style name="EditText.Portfolio">
+        <item name="android:drawableStart">@drawable/ic_portfolio</item>
+        <item name="android:hint">@string/portfolio_hint</item>
+        <item name="android:drawableTint">@color/colorDark</item>
+    </style>
+
+    <style name="EditText.Description">
+        <item name="android:background">@drawable/shape_rectangle_rounded_10</item>
+        <item name="android:drawableStart">@drawable/outline_description_24</item>
+        <item name="android:hint">@string/description_hint</item>
+        <item name="android:drawableTint">@color/colorDark</item>
+    </style>
     <!--End of Style for EditText-->
 
     <!--Style for TextView-->

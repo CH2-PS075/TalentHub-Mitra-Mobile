@@ -1,4 +1,4 @@
-package com.ch2ps075.talenthubmitra.ui.login
+package com.ch2ps075.talenthubmitra.ui.auth.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +12,7 @@ import com.ch2ps075.talenthubmitra.data.preference.TalentModel
 import com.ch2ps075.talenthubmitra.databinding.ActivityLoginBinding
 import com.ch2ps075.talenthubmitra.state.ResultState
 import com.ch2ps075.talenthubmitra.ui.ViewModelFactory
-import com.ch2ps075.talenthubmitra.ui.register.RegisterActivity
+import com.ch2ps075.talenthubmitra.ui.auth.register.PreRegisterActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -44,7 +44,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.tvSignup.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
+            startActivity(Intent(this, PreRegisterActivity::class.java))
         }
     }
 
@@ -62,8 +62,10 @@ class LoginActivity : AppCompatActivity() {
                     is ResultState.Success -> {
                         viewModel.saveSession(
                             TalentModel(
-                                username = result.data.name,
                                 email = email,
+                                contact = result.data.contact,
+                                address = result.data.address,
+                                picture = result.data.picture,
                                 token = result.data.token
                             )
                         )
